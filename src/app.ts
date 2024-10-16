@@ -3,7 +3,8 @@ import AutoLoad, { AutoloadPluginOptions } from "@fastify/autoload";
 import { FastifyPluginAsync } from "fastify";
 import "module-alias/register";
 import dotenv from 'dotenv';
-import { connectDB } from "@data-access/connect-to-db";
+import { connectDB } from "./data-access/connect-to-db";
+import 'module-alias/register';
 //import Agenda from "agenda";
 // import fastifyServerTimeout from "fastify-server-timeout";
 

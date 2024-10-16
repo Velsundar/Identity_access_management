@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",                   // Set the base URL for module resolution
+    "outDir": "./dist",
+    "baseUrl": ".", 
     "paths": {
       "@utils/*": ["src/utils/*"],
       "@data-access/*": ["src/data-access/*"],
