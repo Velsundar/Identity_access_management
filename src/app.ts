@@ -2,6 +2,8 @@ import { join } from "path";
 import AutoLoad, { AutoloadPluginOptions } from "@fastify/autoload";
 import { FastifyPluginAsync } from "fastify";
 import "module-alias/register";
+import dotenv from 'dotenv';
+import { connectDB } from "@data-access/connect-to-db";
 //import Agenda from "agenda";
 // import fastifyServerTimeout from "fastify-server-timeout";
 
@@ -19,6 +21,8 @@ const app: FastifyPluginAsync<AppOptions> = async (
   fastify,
   opts
 ): Promise<void> => {
+  dotenv.config();
+  await connectDB();
   // fastify.server.setTimeout(60000 * 5); // 5 minutes
   // fastify.server.keepAliveTimeout = 60000 * 5; // 5 minutes
   // fastify.server.headersTimeout = 60000 * 5; // 5 minutes; // Set timeout to 60 seconds (60,000 milliseconds)

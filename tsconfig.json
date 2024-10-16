@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "baseUrl": ".",                   // Set the base URL for module resolution
+    "paths": {
+      "@utils/*": ["src/utils/*"],
+      "@data-access/*": ["src/data-access/*"],
+      "@routes/*": ["src/routes/*"]
+    },
     "module": "commonjs",
-    "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "target": "es2017",
+    "lib": ["esnext"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
