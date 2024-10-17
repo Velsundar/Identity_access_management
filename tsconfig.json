@@ -1,19 +1,24 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "baseUrl": ".", 
-    "paths": {
-      "@utils/*": ["src/utils/*"],
-      "@data-access/*": ["src/data-access/*"],
-      "@routes/*": ["src/routes/*"]
+    "outDir": "./dist",                     // Output directory for compiled files
+    "baseUrl": ".",                         // Base directory for resolving non-relative module names
+    "paths": {                              // Path mappings for module resolution
+      "@utils/*": ["src/utils/*"],         // Alias for utils
+      "@data-access/*": ["src/data-access/*"], // Alias for data-access
+      "@routes/*": ["src/routes/*"],
+      "@domain/*": ["src/domain/*"],
+      "@config/*": ["src/config/*"]        // Alias for routes
     },
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "target": "es2017",
-    "lib": ["esnext"]
+    "module": "commonjs",                   // Module system to use
+    "esModuleInterop": true,                 // Enables emit interoperability between CommonJS and ES Modules
+    "resolveJsonModule": true,              // Allows importing JSON files
+    "moduleResolution": "node",             // Module resolution strategy
+    "target": "es2017",                     // Specify ECMAScript target version
+    "lib": ["esnext"],                      // Specify library files to include
+    "strict": true,                         // Enable all strict type-checking options
+    "noImplicitAny": true,                  // Raise error on expressions and declarations with an implied 'any' type
+    "skipLibCheck": true                    // Skip type checking of declaration files
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts"],               // Files to include in the compilation
+  "exclude": ["node_modules"]               // Files to exclude from the compilation
 }

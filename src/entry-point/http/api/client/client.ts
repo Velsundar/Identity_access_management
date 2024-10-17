@@ -1,9 +1,9 @@
 import { FastifyPluginAsync } from 'fastify';
-import createClientUsecase from '../../../..//domain/useCases/clients/client.useCase';
+import createClientUsecase from '@domain/useCases/clients/client.useCase';
 import { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import { SUCCESS } from '../../../../config/stringConsent';
-import { STATUS_CODES } from '../../../../config/responseCode';
-import { createErrorResponse, createSuccessResponse } from '../../../../config/responses';
+import { SUCCESS } from '@config/stringConsent';
+import { STATUS_CODES } from '@config/responseCode';
+import { createErrorResponse, createSuccessResponse } from '@config/responses';
 
 const clientRoutes: FastifyPluginAsync = async (fastify, options) => {
   fastify

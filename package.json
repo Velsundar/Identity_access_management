@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.10",
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.7.6",
     "concurrently": "^9.0.1",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
@@ -44,6 +44,10 @@
     "typescript": "^5.6.3"
   },
   "_moduleAliases": {
-    "@": "dist"
+    "@domain": "dist/domain",
+    "@utils": "dist/utils",
+    "@data-access": "dist/data-access",
+    "@routes": "dist/routes",
+    "@config": "dist/config"
   }
 }
