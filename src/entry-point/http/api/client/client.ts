@@ -11,7 +11,7 @@ const clientRoutes: FastifyPluginAsync = async (fastify, options) => {
     .post(
       '/',
       async function (request, reply) {
-        const createdClient = await createClientUsecase(request.body); // Pass request.body
+        const createdClient = await createClientUsecase(request.body);
         if (createdClient?.status === 'SUCCESS') {
           return reply
             .status(STATUS_CODES.created.code)
@@ -24,7 +24,7 @@ const clientRoutes: FastifyPluginAsync = async (fastify, options) => {
             );
         } else {
           return reply
-            .status(STATUS_CODES.internalServerError.code) // Send the appropriate status code
+            .status(STATUS_CODES.internalServerError.code)
             .send(
               createErrorResponse(
                 STATUS_CODES.internalServerError,

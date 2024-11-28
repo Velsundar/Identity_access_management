@@ -5,25 +5,18 @@ const uuid = require('uuid');
 
 export const ClientSchema = new mongoose.Schema(
   {
-    clientId: { type: String }, //primary key for profileX secondary key for CORE system
+    clientId: { type: String },
     client_ref_id: { type: String },
     leadId: { type: String },
     productId: { type: String },
     uniqueId: { type: String },
     resellerId: { type: String },
-    /**
-     * mandotory
-     * email
-     * mobileNumber
-     * name
-     */
     email: { type: String },
     mobileNumber: { type: String },
     name: { type: String },
     bankAccDetails: {
       type: Array,
     },
-    //business details
     businessName: { type: String },
     businessType: { type: String },
     businessPan: { type: String },
@@ -37,7 +30,6 @@ export const ClientSchema = new mongoose.Schema(
     companyWebsite: { type: String },
     industryType: { type: String },
     industrySegment: { type: String },
-    //onboarding details
     isFreeCredit: { type: Boolean, default: false },
     profilexClientCallback: { type: String },
     onBoardedBy: { type: String, enum: ['self', 'sales'], default: 'self' },
@@ -46,7 +38,6 @@ export const ClientSchema = new mongoose.Schema(
       enum: ['SAAS', 'API', 'SDK', 'Bundles'],
       default: 'SAAS',
     },
-    //for payment
     vanAccNum: {
       type: String,
     },
@@ -141,10 +132,6 @@ export const ClientSchema = new mongoose.Schema(
     fromDate: {
       type: Date,
     },
-    /**
-     * while sales onboarding with kyc verification and preload the wallet
-     */
-
     pullFrequency: {
       type: String,
     },
